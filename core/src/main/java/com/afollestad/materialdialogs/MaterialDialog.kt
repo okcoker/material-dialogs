@@ -306,6 +306,12 @@ class MaterialDialog(
     return this
   }
 
+  /** Force action buttons to display inline */
+  fun disableButtonStacking(disable: Boolean): MaterialDialog {
+    view.buttonsLayout.disableButtonStacking = disable
+    return this
+  }
+
   /** A fluent version of [setCancelable]. */
   fun cancelable(cancelable: Boolean): MaterialDialog {
     this.setCancelable(cancelable)

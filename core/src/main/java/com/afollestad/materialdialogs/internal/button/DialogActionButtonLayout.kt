@@ -55,6 +55,7 @@ internal class DialogActionButtonLayout(
   private val checkBoxPromptMarginHorizontal = dimenPx(R.dimen.md_checkbox_prompt_margin_horizontal)
 
   private var stackButtons: Boolean = false
+  var disableButtonStacking: Boolean = false
 
   lateinit var actionButtons: Array<DialogActionButton>
   lateinit var checkBoxPrompt: AppCompatCheckBox
@@ -121,7 +122,7 @@ internal class DialogActionButtonLayout(
       )
     }
 
-    if (visibleButtons.isNotEmpty() && !stackButtons) {
+    if (visibleButtons.isNotEmpty() && !stackButtons && !disableButtonStacking) {
       var totalWidth = 0
       for (button in visibleButtons) {
         totalWidth += button.measuredWidth + buttonSpacing
